@@ -1,0 +1,31 @@
+﻿
+
+@model Coinly.ViewModels.RandomIcoViewModel
+
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var className = Model.Customer.Count > 0 ? "Popular" : null;
+}
+
+<h2 class="@className"> @Model.Ico.Name</h2>
+
+@if(Model.Customer .Count==0)
+{
+    <text> No one has created any review for this ICO</text>
+}
+else
+{
+    <ul>
+        @foreach (var customer in Model.Customer)
+        {
+            <li>@customer.Name</li>
+        }
+    </ul>
+}
+
+
+

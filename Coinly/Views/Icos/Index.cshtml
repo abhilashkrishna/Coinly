@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Coinly.Models.Ico>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ICO</h2>
+
+<table class="table table-striped table-bordered table-hover">
+
+    <thead>
+
+        <tr class="success">
+
+            <th>ICO</th>
+            <th>Industry</th>
+            <th>Description</th>
+            <th>Type</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach (var ico in Model)
+        {
+            <tr>
+                <td>@ico.Name</td>
+                <td>@ico.Industry</td>
+                <td>@ico.Description</td>
+                <td>@ico.IcoTypes.Type</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
